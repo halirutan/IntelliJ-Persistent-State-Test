@@ -1,0 +1,30 @@
+<idea-plugin>
+    <id>de.halirutan.persistence</id>
+    <name>Persistence</name>
+    <vendor email="bobby@boing.com" url="http://www.acme.com">Acme Inc</vendor>
+
+    <description><![CDATA[Very long text that doesn't need to make sense]]></description>
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+         on how to target different products -->
+    <!-- uncomment to enable plugin in all products
+    <depends>com.intellij.modules.lang</depends>
+    -->
+
+    <extensions defaultExtensionNs="com.intellij">
+        <applicationService serviceImplementation="de.halirutan.persistence.ServerConfigList"/>
+    </extensions>
+
+    <actions>
+        <!-- Add your actions here -->
+        <action id="persistence.add.server" class="de.halirutan.persistence.AddServerAction" text="Add Server"
+                description="Adds a server">
+            <add-to-group group-id="EditMenu" anchor="last"/>
+        </action>
+        <action id="show.sever.list" class="de.halirutan.persistence.ShowServerListAction" text="Show Servers"
+                description="Shows available Servers">
+            <add-to-group group-id="EditMenu" anchor="last"/>
+        </action>
+    </actions>
+
+</idea-plugin>
